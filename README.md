@@ -1,3 +1,9 @@
+
+# Description:
+
+A real-time streaming pipeline to fetch and process news headlines from APIs and tweets using Kafka and Spark.
+It analyzes tweets and news headlines using cosine similarity and implemented TF-IDF for trending news ranking.
+
 # Set up commands:
 
 ## KAFKA
