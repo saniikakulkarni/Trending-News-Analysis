@@ -1,31 +1,23 @@
 # Set up commands:
 
 ## KAFKA
--------------------------------------------------------------------
 Start zookeeper using :
 bin/zookeeper-server-start.sh config/zookeeper.properties
 
 Start Kafka using :
 JMX_PORT=8004 bin/kafka-server-start.sh config/server.properties
 
--------------------------------------------------------------------
-
 ## CMAK
--------------------------------------------------------------------
 Start the kafka manger server using:
 /opt/CMAK/target/universal/cmak-3.0.0.5 bin/cmak -Dconfig.file=conf/application.conf -Dhttp.port=8080
 
--------------------------------------------------------------------
-
 ## SPARK
--------------------------------------------------------------------
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1,com.johnsnowlabs.nlp:spark-nlp_2.12:3.0.3 structured_streaming.py
 
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1,com.johnsnowlabs.nlp:spark-nlp_2.12:3.0.3,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 headlines_streaming.py
 
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1,com.johnsnowlabs.nlp:spark-nlp_2.12:3.0.3,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 structured_streaming.py
 
--------------------------------------------------------------------
 To kill zookeeper process
 
 sudo kill -9 `sudo lsof -t -i:2181`
